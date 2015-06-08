@@ -1,5 +1,3 @@
-#this was quite a forced result... It can probably be done a better way
-
 def is_palindrome(number)
   palindrome = number.to_s.reverse.to_i
   if palindrome == number
@@ -9,17 +7,18 @@ def is_palindrome(number)
   end 
 end
 
-three_digit_number1 = 999
-three_digit_number2 = 999
-test_value = 0
+largest_palindrome = 0
 
-three_digit_number1.downto(900) do |m|
-  three_digit_number2.downto(900) do |n|
+999.downto(100) do |m|
+  m.downto(100) do |n|
     test_value = m * n
-    break puts n if is_palindrome(test_value) == true
+    if is_palindrome(test_value) == true
+      if test_value > largest_palindrome
+        largest_palindrome = m * n
+      end
+    end
   end
-  break puts m if is_palindrome(test_value) == true
 end
-puts test_value
+puts largest_palindrome
 
 
