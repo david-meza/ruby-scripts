@@ -18,6 +18,6 @@ end
 
 require 'rational'
 num = (1..20).inject(1) do |result, n| 
-  result.lcm n 
+  result.lcm n #finds lcm 20 times... first between 1 and 2, then between the (lcm of 1 and 2) and 3, then between (lcm of 1,2,3) and 4, etc...
 end
 puts "Smallest evenly divisible number is #{ num }."
